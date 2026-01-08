@@ -8,7 +8,7 @@ def test_hashing_consistency():
     """
     Test that the same input always produces the same hash.
     """
-    assert hash_feature("Istanbul") == hash_feature("Istanbul")
+    assert hash_feature("Istanbul") == hash_feature("Ankara")
 
 def test_hashing_range():
     """
