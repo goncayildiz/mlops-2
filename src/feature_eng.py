@@ -1,12 +1,18 @@
-import hashlib
+"""
+Feature Engineering Module.
+This module contains functions to transform raw data into features for the model.
+"""
 
 
 def hash_feature(value, n_buckets=1000):
+    """
+    Hashes a string value into a numerical bucket.
 
-    if not isinstance(value, str):
-        value = str(value)
+    Args:
+        value (str): The input string to hash.
+        n_buckets (int): The number of buckets (default 1000).
 
-    encoded = value.encode('utf-8')
-    hash_object = hashlib.md5(encoded)
-    hex_dig = hash_object.hexdigest()
-    return int(hex_dig, 16) % n_buckets
+    Returns:
+        int: The bucket index.
+    """
+    return hash(value) % n_buckets
